@@ -31,11 +31,11 @@
   "Which imenu style to use when creating the entries.
 
 Allowed values:
-- `'context`: List all contexts.
-- `'message`: List all messages.
-- `'vanished`: List only vanished messages.
-- `'unfinished`: List only unfinished messages.
-- `'obsolete`: List only obsolete messages."
+- context: List all contexts.
+- message: List all messages.
+- vanished: List only vanished messages.
+- unfinished: List only unfinished messages.
+- obsolete: List only obsolete messages."
   :type '(choice (const :tag "List all contexts" context)
                  (const :tag "List all messages" message)
                  (const :tag "List vanished messages" vanished)
@@ -100,7 +100,7 @@ element of a <message>, prefixed by the <name> of the parent <context>."
 (defun qt-translations-mode-imenu-create-index-for-each-message-with-type-attribute (type)
   "Create an imenu index for messages whose translation has type TYPE.
 
-TYPE can be `'vanished', `'unfinished', or `'obsolete'."
+TYPE can be `vanished', `unfinished', or `obsolete'."
   (let (index)
     (save-excursion
       (goto-char (point-min))
@@ -138,11 +138,11 @@ TYPE can be `'vanished', `'unfinished', or `'obsolete'."
 (defun qt-translations-mode-imenu-create-index ()
   "Create an imenu index for XML files corresponding to Qt language files.
 The behavior depends on the value of `qt-translations-imenu-style`:
-- `'context`: Group entries by context.
-- `'message`: List all messages.
-- `'vanished`: List only vanished messages.
-- `'unfinished`: List only unfinished messages.
-- `'obsolete`: List only obsolete messages."
+- context: Group entries by context.
+- message: List all messages.
+- vanished: List only vanished messages.
+- unfinished: List only unfinished messages.
+- obsolete: List only obsolete messages."
   (cond
    ((eq qt-translations-imenu-style 'context)
     (qt-translations-mode-imenu-create-index-for-each-context))
